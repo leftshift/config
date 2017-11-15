@@ -17,6 +17,9 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+" enable mouse input
+set mouse=a
+
 " show line numbers
 set number
 set expandtab
