@@ -20,6 +20,9 @@ colorscheme solarized
 " enable mouse input
 set mouse=a
 
+" highlight search matches
+set hlsearch
+
 " show line numbers
 set number
 set expandtab
