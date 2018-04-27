@@ -75,7 +75,16 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id.adrian"
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
+
+# Don't share history between shells
+unsetopt share_history
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -87,6 +96,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ve="source venv/bin/activate"
 alias mpva="mpv --no-video"
+alias eo="exo-open"
 
 # OPAM configuration
 . /home/adrian/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# Android home for compiling from shell
+export ANDROID_HOME=/opt/android-sdk
+
+export EDITOR=vim
