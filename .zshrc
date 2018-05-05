@@ -105,3 +105,4 @@ alias eo="exo-open"
 export ANDROID_HOME=/opt/android-sdk
 
 export EDITOR=vim
+export PATH=$PATH:~/go/bin
