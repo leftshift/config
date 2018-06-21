@@ -224,7 +224,7 @@ bindsym XF86Eject exec eject
 
 bindsym $mod+t exec thunar
 
-# set border pixel 0
+hide_edge_borders smart
 
 # Set background on startup
 exec ~/scripts/background.sh
