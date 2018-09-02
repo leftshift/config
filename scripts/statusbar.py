@@ -78,7 +78,7 @@ status.register("runwatch",
 
 # Note: requires both netifaces and basiciw (for essid and quality)
 status.register("network",
-    interface="wls1",
+    interface="eth0",
     format_up="\uf1eb {essid} {quality:03.0f}% {v4cidr}",
     color_up=green,
     color_down=red
