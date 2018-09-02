@@ -49,10 +49,6 @@ status.register("mem",
 )
 
 
-# Shows your CPU temperature, if you have a Intel CPU
-status.register("temp",
-    format="\uf2c7 {temp:.0f}°C",)
-
 status.register("alsa",
     format="\uf028 {volume}",
     format_muted="\uf026 {volume}",
@@ -63,35 +59,6 @@ status.register("alsa",
     # this will refresh any module by clicking on it
     on_rightclick = "run",
     )
-
-# The battery monitor has many formatting options, see README for details
-
-# This would look like this, when discharging (or charging)
-# ↓14.22W 56.15% [77.81%] 2h:41m
-# And like this if full:
-# =14.22W 100.0% [91.21%]
-#
-# This would also display a desktop notification (via D-Bus) if the percentage
-# goes below 5 percent while discharging. The block will also color RED.
-# If you don't have a desktop notification demon yet, take a look at dunst:
-#   http://www.knopwob.org/dunst/
-status.register("battery",
-    format="{status} {consumption:.2f}W {percentage:.2f}% {remaining:%E%hh:%Mm}",
-    interval=5,
-#    alert=True,
-    alert_percentage=5,
-    status={
-        "DIS": "\uf242",
-        "CHR": "\uf0e7",
-        "FULL": "\uf1e6",
-    },
-    full_color=green,
-    charging_color=green,
-    critical_color=red
-)
-
-# This would look like this:
-# Discharging 6h:51m
 
 # Displays whether a DHCP client is running
 status.register("runwatch",
