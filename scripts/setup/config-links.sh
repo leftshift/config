@@ -1,4 +1,4 @@
 #!/bin/bash
-ln -s ~/.config/.vimrc ~/.vimrc
-ln -s ~/.config/.vim ~/.vim
-ln -s ~/.config/.zshrc ~/.zshrc
+ln -sr ~/.config/.vimrc ~/.vimrc
+ln -sr ~/.config/.vim ~/.vim
+ln -sr ~/.config/.zshrc ~/.zshrc
