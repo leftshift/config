@@ -220,11 +220,11 @@ bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 
 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
-bindsym XF86MonBrightnessDown exec xbacklight -10
-bindsym XF86MonBrightnessUp exec xbacklight +10
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 10%+
 
-bindsym Shift+XF86MonBrightnessDown exec xbacklight -1
-bindsym Shift+XF86MonBrightnessUp exec xbacklight +1
+bindsym Shift+XF86MonBrightnessDown exec brightnessctl set 1%-
+bindsym Shift+XF86MonBrightnessUp exec brightnessctl set 1%+
 
 bindsym XF86Eject exec eject
 
