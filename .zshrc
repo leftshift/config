@@ -89,6 +89,8 @@ alias ve="source venv/bin/activate"
 alias mpva="mpv --no-video"
 alias eo="exo-open"
 
+alias sa=ssh-add ~/.ssh/id_rsa
+
 # OPAM configuration
 . /home/adrian/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
