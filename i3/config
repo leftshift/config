@@ -240,4 +240,6 @@ exec owncloud
 
 bindsym $mod+b exec ~/.config/scripts/background.sh
 
-bindsym $mod+l exec ~/.config/scripts/lock.sh 
+bindsym $mod+l exec ~/.config/scripts/lock-lightdm.sh 
+
+bindsym Print exec deepin-screenshot
