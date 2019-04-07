@@ -30,3 +30,7 @@ set number
 set expandtab
 set tabstop=4
 set shiftwidth=4
+
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
