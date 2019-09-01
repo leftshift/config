@@ -23,6 +23,33 @@ font pango:Source Sans Pro 9
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+### Color Scheme
+
+## Orange
+# set $fgcolor                     #333333
+# set $hfgcolor                    #f98b00
+# set $bgcolor                     #63ccff
+# set $iacolor                     #c05d00
+
+## Solarized
+set  $base03          #002b36
+set  $base02          #073642
+set  $base01          #586e75
+set  $base00          #657b83
+set  $base0           #839496
+set  $base1           #93a1a1
+set  $base2           #eee8d5
+set  $base3           #fdf6e3
+set  $yellow          #b58900
+set  $orange          #cb4b16
+set  $red             #dc322f
+set  $magenta         #d33682
+set  $violet          #6c71c4
+set  $blue            #268bd2
+set  $cyan            #2aa198
+set  $green           #859900
+set  $custom          #1c5766
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -175,37 +202,11 @@ bar {
 
 # exec sh ~/.config/lemonbar/runbar.sh
 
-### Color Scheme
 
-## Orange
-# set $fgcolor                     #333333
-# set $hfgcolor                    #f98b00
-# set $bgcolor                     #63ccff
-# set $iacolor                     #c05d00
-
-## Solarized
-set  $base03          #002b36
-set  $base02          #073642
-set  $base01          #586e75
-set  $base00          #657b83
-set  $base0           #839496
-set  $base1           #93a1a1
-set  $base2           #eee8d5
-set  $base3           #fdf6e3
-set  $yellow          #b58900
-set  $orange          #cb4b16
-set  $red             #dc322f
-set  $magenta         #d33682
-set  $violet          #6c71c4
-set  $blue            #268bd2
-set  $cyan            #2aa198
-set  $green           #859900
-set  $custom          #1c5766
-
-# Set window appearence          border    bg        fg       urgent
-client.focused                   $blue     $blue     $base3   $violet
-client.focused_inactive          $base02   $base02   $base2   $violet
-client.unfocused                 $base02   $base02   $base2   $base01
+# Set window appearence          border    bg        fg       urgent    child_border
+client.focused                   $blue     $blue     $base3   $violet   $blue
+client.focused_inactive          $base02   $base02   $base2   $violet   $base02
+client.unfocused                 $base02   $base02   $base2   $base01   $base02
 
 
 ### Stuff I did
@@ -240,6 +241,6 @@ exec owncloud
 
 bindsym $mod+b exec ~/.config/scripts/background.sh
 
-bindsym $mod+l exec ~/.config/scripts/lock-lightdm.sh 
+bindsym $mod+l exec i3lock
 
 bindsym Print exec deepin-screenshot
