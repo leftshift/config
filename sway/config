@@ -28,6 +28,11 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 output eDP-1 pos 0 300
 output DP-4 pos 1600 0
+output DP-1 pos 1600 0
+# output eDP-1 pos 0 300
+# output DP-4 pos 1600 0
+# output DP-1 pos 0 -1140
+
 #
 # Example configuration:
 #
@@ -39,15 +44,17 @@ output DP-4 pos 1600 0
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' \
-#               resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
+exec swayidle -w \
+         timeout 700 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * dpms off"' \
+              resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
+exec mako
 
 ### Input configuration
 #
@@ -249,6 +256,9 @@ hide_edge_borders smart
 
 bindsym $mod+l exec swaylock
 
-bindsym Print exec deepin-screenshot
+#bindsym Print exec deepin-screenshot
+
+bindsym $mod+t exec Thunar
+
 
 include /etc/sway/config.d/*
