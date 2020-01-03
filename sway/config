@@ -26,9 +26,13 @@ font pango:Source Sans Pro 9
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
-output eDP-1 pos 0 300
-output DP-4 pos 1600 0
-output DP-1 pos 1600 0
+set $laptop eDP-1
+# bindswitch lid:on output $laptop disable
+# bindswitch lid:off output $laptop enable
+
+output $laptop pos 0 300
+output DP-3 pos 1600 0
+output DP-4 pos 3520 0
 # output eDP-1 pos 0 300
 # output DP-4 pos 1600 0
 # output DP-1 pos 0 -1140
@@ -219,6 +223,16 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+mode "rotate" {
+    bindsym Left output -- transform 270; mode "default"
+    bindsym Right output -- transform 90; mode "default"
+    bindsym Down output -- transform 0; mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+r mode "rotate"
 
 #
 # Status Bar:
