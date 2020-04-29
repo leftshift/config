@@ -1,4 +1,4 @@
-# Default config for sway
+
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
@@ -24,15 +24,17 @@ font pango:Source Sans Pro 9
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ~/ownCloud/wallpaper/chaos/cch-desktop-wallpaper.png fill
 
 set $laptop eDP-1
 # bindswitch lid:on output $laptop disable
 # bindswitch lid:off output $laptop enable
 
-output $laptop pos 0 300
-output DP-3 pos 1600 0
-output DP-4 pos 3520 0
+output $laptop pos 160 1080
+output 'Samsung Electric Company SyncMaster 0x00003130' pos 0 0
+output 'Samsung Electric Company C27F398 HTPJB00133' pos 1600 780
+output 'Iiyama North America PL2481H 11187V3904390' pos 3520 780
 # output eDP-1 pos 0 300
 # output DP-4 pos 1600 0
 # output DP-1 pos 0 -1140
@@ -172,7 +174,7 @@ input type:keyboard {
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    #bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
@@ -257,6 +259,10 @@ bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 
 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play-pause
+
 bindsym Shift+XF86MonBrightnessDown exec brightnessctl set 1-%
 bindsym Shift+XF86MonBrightnessUp exec brightnessctl set +1%
 
@@ -274,5 +280,12 @@ bindsym $mod+l exec swaylock
 
 bindsym $mod+t exec Thunar
 
+set $screenshot grim -g "$(slurp)" - | wl-copy
+set $screenshot_save grim -g "$(slurp)" "~/Pictures/Screenshot-$(date --rfc-3339=seconds).png"
+
+bindsym $mod+Print exec $screenshot
+bindsym $mod+Shift+Print exec $screenshot_save
+
+bindsym $mod+s sticky toggle
 
 include /etc/sway/config.d/*
