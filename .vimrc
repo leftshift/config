@@ -13,22 +13,39 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
-Plugin 'tidalcycles/vim-tidal'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 filetype plugin indent on
 
 " solarized setup
+let g:solarized_termtrans=1
 syntax enable
-set t_Co=256
 set background=dark
 colorscheme solarized
 
 " make ultisnips work
 let g:UltiSnipsExpandTrigger="<c-j>"
 
+" airline tabline integration
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+
+nmap <leader>t :bnext<CR>
+nmap <leader>T :bprevious<CR>
+
+" allow modified buffers to move to background
+set hidden
+
 " enable mouse input
 set mouse=a
+set ttymouse=sgr
 
 " highlight search matches
 set hlsearch
