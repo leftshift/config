@@ -1,0 +1,29 @@
+# Get a token at https://github.com/settings/tokens/new to improve rate limit
+GithubToken: ""
+# Select a colorscheme you want to use
+Colorscheme: "solarized-dark.yaml"
+
+# Scheme and template list URLs default to the following but can be overridden if you wish
+#SchemesMasterURL: "https://raw.githubusercontent.com/chriskempson/base16-schemes-source/master/list.yaml"
+#TemplatesMasterURL: "https://raw.githubusercontent.com/chriskempson/base16-templates-source/master/list.yaml"
+
+# Enable/Disable dry-run. If enabled no configs will be altered
+DryRun: false
+# Set the applications templates you want to render to true
+applications:
+  sway:
+    enabled: true
+    hook: swaymsg reload
+    files:
+      colors:
+        path: ~/.config/sway/colorscheme
+        mode: rewrite
+  mako:
+    enabled: true
+    hook: makoctl reload
+    files:
+      default:
+        path: ~/.config/mako/config
+        mode: replace
+        start_marker: "# <<<<<<<<<<"
+        end_marker: "# >>>>>>>>>>"
