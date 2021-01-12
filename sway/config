@@ -17,7 +17,7 @@ set $mod Mod4
 set $term alacritty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $menu rofi -show run
+set $menu wofi --show run
 
 font pango:Source Sans Pro 9
 
