@@ -94,10 +94,13 @@ alias sa=ssh-add ~/.ssh/id_rsa
 # OPAM configuration
 . /home/adrian/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
+# nvm
+. /usr/share/nvm/init-nvm.sh
+
 # Android home for compiling from shell
 export ANDROID_HOME=/opt/android-sdk
 
-export EDITOR=vim
+export EDITOR=nvim
 export PATH=$PATH:~/go/bin
 
 # Enable color output in less
