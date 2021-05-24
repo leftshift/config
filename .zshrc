@@ -77,20 +77,6 @@ source $ZSH/oh-my-zsh.sh
 # Don't share history between shells
 unsetopt share_history
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ve="source venv/bin/activate"
-alias mpva="mpv --no-video"
-alias eo="exo-open"
-
-alias sa=ssh-add ~/.ssh/id_rsa
-
 # OPAM configuration
 . /home/adrian/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
@@ -112,3 +98,20 @@ export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
 export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ve="source venv/bin/activate"
+alias mpva="mpv --no-video"
+alias o="xdg-open"
+alias e="$EDITOR"
+
+alias sa=ssh-add ~/.ssh/id_rsa
+
