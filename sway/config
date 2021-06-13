@@ -296,19 +296,31 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 hide_edge_borders smart
 
 bindsym $mod+l exec swaylock
-
-#bindsym Print exec deepin-screenshot
+bindsym $mod+shift+l exec systemctl suspend
 
 bindsym $mod+t exec Thunar
 
 set $screenshot grim -g "$(slurp)" - | wl-copy
-set $screenshot_save grim -g "$(slurp)" "~/Pictures/Screenshot-$(date --rfc-3339=seconds).png"
+set $screenshot_save grim -g "$(slurp)" "/home/adrian/Pictures/Screenshot-$(date --rfc-3339=seconds).png"
 
 bindsym $mod+Print exec $screenshot
 bindsym $mod+Shift+Print exec $screenshot_save
 
+mode "balance" {
+    bindsym c exec balance c; mode "default"
+    bindsym r exec balance r; mode "default"
+    bindsym l exec balance l; mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+b mode "balance"
+
 bindsym $mod+s sticky toggle
 
 bindsym $mod+i exec "rofimoji --files emojis math"
+
+bindsym $mod+semicolon exec "desk_light toggle"
 
 include /etc/sway/config.d/*
