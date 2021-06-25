@@ -19,7 +19,7 @@ set $term alacritty
 # Note: it's recommended that you pass the final command to sway
 set $menu wofi --show run
 
-font pango:Source Sans Pro 9
+font pango:Source Sans Pro 10
 
 ### Output configuration
 #
@@ -31,8 +31,8 @@ set $laptop eDP-1
 # bindswitch lid:on output $laptop disable
 # bindswitch lid:off output $laptop enable
 
-output $laptop pos 160 1080
-output 'Samsung Electric Company SyncMaster 0x00003130' pos 1760 900
+output $laptop scale 1.6 pos 0 1080
+output 'Samsung Electric Company SyncMaster 0x00003130' pos 0 0
 output 'Samsung Electric Company C27F398 HTPJB00133' pos 1600 780
 output 'Iiyama North America PL2481H 11187V3904390' pos 3520 780
 # output eDP-1 pos 0 300
@@ -284,12 +284,13 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioPlay exec playerctl play-pause
 
-bindsym Shift+XF86MonBrightnessDown exec brightnessctl set 1-%
-bindsym Shift+XF86MonBrightnessUp exec brightnessctl set +1%
-
 ## Brightness
-bindsym XF86MonBrightnessDown exec brightnessctl set 5-%
-bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+exec wlr-brightness
+bindsym Shift+XF86MonBrightnessDown exec gdbus call -e -d de.mherzberg -o /de/mherzberg/wlrbrightness -m de.mherzberg.wlrbrightness.decrease 0.01
+bindsym Shift+XF86MonBrightnessUp exec gdbus call -e -d de.mherzberg -o /de/mherzberg/wlrbrightness -m de.mherzberg.wlrbrightness.increase 0.01
+
+bindsym XF86MonBrightnessDown exec gdbus call -e -d de.mherzberg -o /de/mherzberg/wlrbrightness -m de.mherzberg.wlrbrightness.decrease 0.05
+bindsym XF86MonBrightnessUp exec gdbus call -e -d de.mherzberg -o /de/mherzberg/wlrbrightness -m de.mherzberg.wlrbrightness.increase 0.05
 
 
 ## Hide borders for single window
@@ -299,6 +300,7 @@ bindsym $mod+l exec swaylock
 bindsym $mod+shift+l exec systemctl suspend
 
 bindsym $mod+t exec Thunar
+
 
 set $screenshot grim -g "$(slurp)" - | wl-copy
 set $screenshot_save grim -g "$(slurp)" "/home/adrian/Pictures/Screenshot-$(date --rfc-3339=seconds).png"
