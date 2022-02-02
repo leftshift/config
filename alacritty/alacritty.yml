@@ -64,6 +64,7 @@ window:
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
   startup_mode: Windowed
+  opacity: 1.0
 
   # Window title
   #title: Alacritty
@@ -254,12 +255,6 @@ bell:
   animation: EaseOutExpo
   duration: 0
   color: '0x666666'
-
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 1.0
 
 # Mouse bindings
 #
