@@ -31,8 +31,8 @@ status.register("clock",
 # status.register("load",
 #     format="f0ae"
 # )
-status.register("cpu_usage",
-    format="\uf0ae {usage:0>3}%"
+status.register("cpu_usage", 
+       format="\uf0ae {usage:0>3}%"
 )
 
 status.register("swap",

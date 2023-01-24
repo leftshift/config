@@ -63,3 +63,5 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 cursorcolumn
+
+au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
